@@ -7,6 +7,7 @@ import techproed.utilities.Driver;
 
 public class GooglePages {
     public GooglePages(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//*[@name='q']")

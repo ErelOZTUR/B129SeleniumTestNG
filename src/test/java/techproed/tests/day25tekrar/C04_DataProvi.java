@@ -1,41 +1,34 @@
-package techproed.tests.day25_ExcelUtils;
+package techproed.tests.day25tekrar;
 
 import org.openqa.selenium.Keys;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import techproed.pages.GooglePages;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class C04_DataProvider {
+public class C04_DataProvi {
 
-    /*
-    -DataProvider, bir çok veriyi test caselere loop kullanmadan aktarmak için kullanılır.
-    TestNG den gelen bir özelliktir. 2 boyutlu bir Object Array return eder.
-     DDT(Data Driven Testing) için kullanılır. Yani birden fazla veriyi test case'lerde aynı anda kullanmak
-    için kullanılır
-     Kullanımı için @Test notasyonundan sonra paremetre olarak dataprovider yazilir ve String bir isim
-    belirtilir. Bu belittiğimiz isimle @DataProvider notasyonu ile bir method oluşturulur
-     */
+
+
     /*
     Eğer farklı bir test methodu için aynı dataProvider methodu kullanılacaksa
     @DataProvider(name = "googleTest") şeklinde dataprovider notasyonundan sonra name paremetresine yeni olusturduğumuz
     methodun adını yazarız
      */
-    @Test(dataProvider = "googleTest")
-    public void testdataprovider(String data) {
-        //DataP.daki verileri alabilmek icin
-        // Test methodumuza String bir parametre atamasi yapariz
+
+    @Test (dataProvider = "test")
+    public void asd(String data) {
         System.out.println(data);
     }
-    @DataProvider(name = "googleTest")
-    public static Object[][] urunler() {
+
+    @DataProvider (name = "test")
+    public static Object[][] test() {
         return new Object[][]{{"Volvo"}, {"Mercedes"}, {"Audi"}, {"Honda"}, {"Toyota"}, {"Opel"}, {"BMW"}};
     }
-    @Test(dataProvider = "googleTest")
-    public void googleTest(String araclar) {
+    @Test(dataProvider = "test")
+    public void google(String araclar) {
         //Google sayfasına gidiniz
         //Driver.getDriver().get("https://google.com");
         Driver.getDriver().get(ConfigReader.getProperty("googleUrl"));

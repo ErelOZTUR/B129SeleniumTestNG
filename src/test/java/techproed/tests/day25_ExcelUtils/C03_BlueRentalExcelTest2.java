@@ -30,7 +30,7 @@ public class C03_BlueRentalExcelTest2 {
             assert blueRentalPage.verify.isDisplayed();
             ReusableMethods.bekle(1);
             blueRentalPage.login3.click();
-            ReusableMethods.bekle(1);
+            ReusableMethods.bekle(2);
             blueRentalPage.logout.click();
             ReusableMethods.bekle(1);
             blueRentalPage.ok.click();
